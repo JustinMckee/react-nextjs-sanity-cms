@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
+import styles from './Layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Justin McKee';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home }) {
+const Layout = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -61,9 +61,10 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
+          <Link className="text-sm" href="/">← Back to home</Link>
         </div>
       )}
     </div>
   );
 }
+export default Layout;
